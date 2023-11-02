@@ -37,7 +37,7 @@ bool MouseWatcher::eventFilter(QObject *o, QEvent *e)
         leComment->setProperty(SM::_ID_, wSnippet->property(SM::_ID_).toUuid());
         const QString comment = wSnippet->property(SM::_COMMENT_).toString();
         leComment->setText(comment);
-        QToolTip::showText(me->globalPos(), comment);
+        QToolTip::showText(me->globalPosition().toPoint(), comment);
         m_currentEditorID = wSnippet->property(SM::_ID_).toUuid();
     } else {
         leComment->setProperty(SM::_ID_, QUuid());
